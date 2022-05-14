@@ -1,0 +1,100 @@
+body {
+	background-color: #000;
+	width: 100%;
+	height: 100%;
+}
+#container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100vh;
+}
+#flag {
+	display: none;
+	max-width: 1200px;
+	aspect-ratio: 5 / 3;
+	width: 100%;
+	border: 1px solid #000;box-shadow: rgba(255, 255, 255, 0.8) 0px 8px 24px;
+}
+#star-container {
+	flex-basis: 40%;
+	background-color: rgb(3, 3, 124);
+	height: 100%;
+	padding: 0 7.5px;
+}
+.star-row {
+	display: flex;
+	flex-flow:row;
+	justify-content: space-between;
+	height: calc(100% / 9);
+}
+.star-row:nth-child(even) {
+	padding:0 10%;
+}
+.star {
+	color: #fff;
+	flex-grow: 1;
+	text-align: center;
+	font-size: 9px;
+	align-self: center;
+}
+@media only screen and (min-width: 600px) {
+	#star-container {
+		padding: 0 15px;
+	}
+	.star {
+		font-size: 12px;
+	}
+}
+@media only screen and (min-width: 900px) {
+	.star {
+		font-size: 18px;
+	}
+}
+#top {
+	display: flex;
+	flex-wrap: nowrap;
+	height: 52%;
+}
+#bottom {
+	height: calc(100% - 52%);
+}
+#stripe-holder {
+	flex-grow: 1;
+}
+.stripe { width: 100%;}
+#top .stripe {
+	height: calc(100% / 7);
+}
+#bottom .stripe {
+	height: calc(100% / 6);
+}
+#top .stripe:nth-child(odd), 
+#bottom .stripe:nth-child(even) {
+	background-color: red;
+}
+#bottom .stripe:nth-child(odd),
+#top .stripe:nth-child(even) {
+	background-color: #fff;
+}
+
+#words {
+	display: block;
+	color: #FFF;
+	font-size: 22px;
+	padding: 0 30px;
+}
+@media only screen and (min-width: 390px) and (max-width: 1200px){
+	#flag {
+		display: block
+	}
+	#words {
+		display: none;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	#words {
+		font-size: 45px;
+	}
+}
